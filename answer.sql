@@ -8,13 +8,14 @@ CREATE DATABASE IF NOT EXISTS week4_database_assignment;
 USE week4_database_assignment;
 
 -- Question 1: Calculate the total payment amount for each payment date.
--- Group all payments made on the same date and show the newest dates first.
+-- Group all payments made on the same date and show the 5 newest dates first.
 SELECT
     paymentDate,
     SUM(amount) AS total_amount
 FROM payments
 GROUP BY paymentDate
-ORDER BY paymentDate DESC;
+ORDER BY paymentDate DESC
+LIMIT 5;
 
 -- Question 2: Calculate the average credit limit for each customer.
 -- customerNumber identifies a customer; name and country make the result readable.
@@ -28,12 +29,13 @@ GROUP BY customerNumber, customerName, country
 ORDER BY customerName;
 
 -- Question 3: Calculate the total value of products ordered.
--- Sum each order line's price times its quantity, grouped by product.
+-- Include quantityOrdered and group by product and quantity for the required columns.
 SELECT
     productCode,
+    quantityOrdered,
     SUM(priceEach * quantityOrdered) AS total_price
 FROM orderdetails
-GROUP BY productCode
+GROUP BY productCode, quantityOrdered
 ORDER BY total_price DESC;
 
 -- Question 4: Find the highest payment amount for each check number.

@@ -4,9 +4,18 @@ The assignment queries are in [`answer.sql`](answer.sql). The script creates and
 
 ## Before running `answer.sql`
 
-Import the assignment's sample schema and data into `week4_database_assignment` in MySQL first. The queries expect the `customers`, `payments`, and `orderdetails` tables and the columns used in the script. If your course provided a different schema or database name, adjust the setup and table/column names to match it.
+Import the assignment's sample schema and data into `week4_database_assignment` in MySQL first. The queries expect the `customers`, `payments`, and `orderdetails` tables and the columns used in the assignment.
 
-Run the script in MySQL Workbench or the MySQL command-line client. Check that each query executes successfully against your imported data before submitting. This repository does not include the database or its data, so successful execution must be verified in your own MySQL environment.
+Run the script in MySQL Workbench or the MySQL command-line client. Check that each query executes successfully against your imported data before submitting.
+
+## Assignment requirements covered
+
+- **Question 1:** Groups payments by date, orders dates newest first, and limits the output to 5 dates.
+- **Question 2:** Calculates each customer's average credit limit.
+- **Question 3:** Returns `productCode`, `quantityOrdered`, and the total order value, grouped by both columns.
+- **Question 4:** Finds the highest payment amount for each check number.
+
+This repository does not include the assignment's data files. Use the schema and data supplied by the course before running the script.
 
 ## Submission
 
